@@ -166,7 +166,7 @@ export default function HomePage() {
                       Support the owner
                     </div>
                     <div className="mt-4 overflow-hidden rounded-2xl border border-[#0a73ff]/15 bg-white p-3 shadow-inner">
-                      <img src="/donation-qr.svg" alt="GCash donation QR code" className="mx-auto aspect-square w-full max-w-[178px] rounded-xl object-contain" />
+                      <img src="/donation-qr.jpg" alt="GCash donation QR code" className="mx-auto aspect-square w-full max-w-[178px] rounded-xl object-contain" />
                     </div>
                     <div className="mt-3 flex items-center justify-between gap-2">
                       <div>
