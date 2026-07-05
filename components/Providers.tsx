@@ -1,6 +1,5 @@
 "use client";
 
-import { SessionProvider } from "next-auth/react";
 import { createContext, useContext, useEffect, useState } from "react";
 
 interface AppContextType {
@@ -25,10 +24,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <SessionProvider>
-      <AppContext.Provider value={{ onlineCount, activeChats }}>
-        {children}
-      </AppContext.Provider>
-    </SessionProvider>
+    <AppContext.Provider value={{ onlineCount, activeChats }}>
+      {children}
+    </AppContext.Provider>
   );
 }

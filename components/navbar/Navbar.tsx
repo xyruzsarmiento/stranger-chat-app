@@ -2,18 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  MessageCircle, Video, Mic, User, Settings,
-  LogOut, Menu, X, Zap, Shield
+  MessageCircle, Video, Mic, Menu, X, Zap
 } from "lucide-react";
 
 export function Navbar() {
-  const { data: session } = useSession();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -71,51 +67,12 @@ export function Navbar() {
               <span className="text-green-400 text-xs font-medium">Live</span>
             </div>
 
-            {session ? (
-              <div className="relative">
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center gap-2 px-3 py-2 rounded-xl glass border border-white/10 hover:border-purple-500/40 transition-all"
-                >
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 flex items-center justify-center text-xs font-bold text-white">
-                    {session.user?.name?.[0] ?? "U"}
-                  </div>
-                  <span className="text-white text-sm font-medium">{session.user?.name?.split(" ")[0]}</span>
-                </button>
-
-                <AnimatePresence>
-                  {dropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.95 }}
-                      className="absolute right-0 mt-2 w-48 glass-strong rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
-                    >
-                      <Link href="/profile" onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm">
-                        <User className="w-4 h-4" /> Profile
-                      </Link>
-                      <Link href="/settings" onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm">
-                        <Settings className="w-4 h-4" /> Settings
-                      </Link>
-                      <div className="border-t border-white/5 mx-2" />
-                      <button onClick={() => signOut()}
-                        className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 transition-all text-sm">
-                        <LogOut className="w-4 h-4" /> Sign Out
-                      </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <button
-                onClick={() => signIn("google")}
-                className="px-5 py-2 rounded-xl btn-gradient text-white text-sm font-semibold"
-              >
-                <span>Get Started</span>
-              </button>
-            )}
+            <Link
+              href="/chat/text"
+              className="px-5 py-2 rounded-xl btn-gradient text-white text-sm font-semibold"
+            >
+              Start Chatting
+            </Link>
           </div>
 
           {/* Mobile menu btn */}
@@ -151,15 +108,13 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="mt-4">
-                {session ? (
-                  <button onClick={() => signOut()} className="w-full px-4 py-4 rounded-2xl bg-red-500/10 border border-red-500/20 text-red-400 font-medium">
-                    Sign Out
-                  </button>
-                ) : (
-                  <button onClick={() => signIn("google")} className="w-full px-4 py-4 rounded-2xl btn-gradient text-white font-semibold">
-                    <span>Get Started Free</span>
-                  </button>
-                )}
+                <Link
+                  href="/chat/text"
+                  onClick={() => setMenuOpen(false)}
+                  className="block w-full px-4 py-4 rounded-2xl btn-gradient text-center text-white font-semibold"
+                >
+                  Start Chatting
+                </Link>
               </div>
             </div>
           </motion.div>
