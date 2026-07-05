@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">GCash donation QR placeholder</title>
+  <desc id="desc">Replace this file with the owner's real GCash QR image named donation-qr.png or update the page image path.</desc>
+  <rect width="360" height="360" rx="28" fill="#0a73ff"/>
+  <rect x="35" y="35" width="290" height="290" rx="24" fill="#fff"/>
+  <g fill="#111">
+    <path d="M62 62h72v72H62zM226 62h72v72h-72zM62 226h72v72H62z"/>
+    <path fill="#fff" d="M78 78h40v40H78zM242 78h40v40h-40zM78 242h40v40H78z"/>
+    <path d="M88 88h20v20H88zM252 88h20v20h-20zM88 252h20v20H88z"/>
+    <path d="M154 62h14v14h-14zM182 62h28v14h-28zM154 90h42v14h-42zM210 90h14v28h-14zM154 118h14v14h-14zM182 118h28v14h-28z"/>
+    <path d="M146 146h14v14h-14zM174 146h42v14h-42zM230 146h14v14h-14zM258 146h28v14h-28z"/>
+    <path d="M146 174h28v14h-28zM188 174h14v14h-14zM216 174h42v14h-42zM286 174h14v28h-14z"/>
+    <path d="M146 202h14v28h-14zM174 202h42v14h-42zM230 202h14v42h-14zM258 202h28v14h-28z"/>
+    <path d="M154 244h42v14h-42zM210 244h14v28h-14zM244 244h14v14h-14zM272 244h28v14h-28z"/>
+    <path d="M146 286h14v14h-14zM174 272h28v28h-28zM230 272h28v14h-28zM272 272h14v28h-14z"/>
+  </g>
+  <rect x="136" y="151" width="88" height="58" rx="14" fill="#fff"/>
+  <text x="180" y="174" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#0a73ff">GCash</text>
+  <text x="180" y="195" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#ef4444">QR</text>
+  <text x="180" y="334" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#fff">Replace with owner's real scannable QR</text>
+</svg>
